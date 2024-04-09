@@ -47,7 +47,7 @@ Un reloj digital con la fecha y hora actual del lugar en el que te encuentres. T
 ### ¿Qué usaremos?
 - `new Date()` Es el objeto que representa la fecha y hora. Tiene varios métodos que nos ayudará a abtener lo que necesitamos:
   - Hora, minutos y segundos
-  - Día, mes año
+  - Día, mes y año
 - La hora debe actualizarse sola, es decir que si cambia la hora, el minuto o el segundo deben cambiar automaticamente en pantalla. Piensa en la unidad mínima que se necesita para hacer ese cambio. La fecha también debe cambiar. Para esto podemos usar `setInterval()`
 - Necesitaremos condicionales para las frases. Dependiendo la hora saldrá una u otra
 

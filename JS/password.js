@@ -30,12 +30,13 @@ function getElementoAleatorio(array) {
 function generarContrasena(longitud) {
     let password = "";
     let typeofElements = Object.keys(togetherArrays); 
-    console.log(typeofElements)
+    //console.log(typeofElements)
     for (let i = 0; i < longitud; i++) {
         let typeofElement = typeofElements[Math.floor(Math.random() * typeofElements.length)]; 
         let selectionedArray = togetherArrays[typeofElement]; 
         password += getElementoAleatorio(selectionedArray); 
     }
+    
     
     return password;
 }
