@@ -55,14 +55,14 @@ function texto (mayorQue,menorQue,textoIndicacion){
         let existingTexto = textoDomm.querySelector("p");
 
 
-    if (existingTexto) {
-        textoDomm.removeChild(existingTexto);
-    }     
-    let textoDOM= ""
-    textoDOM=document.createElement("p")
-    textoDomm.appendChild(textoDOM)
-    textoDOM.innerHTML = textoIndicacion
-    }
+        if (existingTexto) {
+            textoDomm.removeChild(existingTexto);
+        }     
+        let textoDOM= ""
+        textoDOM=document.createElement("p")
+        textoDomm.appendChild(textoDOM)
+        textoDOM.innerHTML = textoIndicacion
+        }
    
 }
 
