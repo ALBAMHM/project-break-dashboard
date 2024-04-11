@@ -4,11 +4,10 @@ const textoDomm=document.getElementById("texto")
 
 function reloj () {
     const date = new Date();
-    const relojInput = [
-        date.getHours(),
-        date.getMinutes(),
-        date.getSeconds(),
-      ];
+    const hours = String(date.getHours()).padStart(2, '0');
+    const minutes = String(date.getMinutes()).padStart(2, '0');
+    const seconds = String(date.getSeconds()).padStart(2, '0');
+
     let existingHora = sectionDOM.querySelector("p");
 
 
@@ -18,18 +17,19 @@ function reloj () {
     let relojDOM= ""
     relojDOM=document.createElement("p")
     sectionDOM.appendChild(relojDOM)
-    relojDOM.innerHTML = `${relojInput[0]}:${relojInput[1]}:${relojInput[2]}`
+    
+        relojDOM.innerHTML = `${hours}:${minutes}:${seconds}`
+    
 }
 
 
 
 function fecha () {
-    const dateFecha = new Date();
-    const fechaInput = [
-        dateFecha.getDate(),
-        dateFecha.getMonth()+1,
-        dateFecha.getFullYear(),
-      ]
+    const date = new Date();
+    const day=String(date.getDate()).padStart(2,"0")
+    const month=String(date.getMonth()+1).padStart(2,"0")
+    const year=String(date.getFullYear()).padStart(2,"0")
+   
     let existingFecha = articleDOM.querySelector("p");
 
 
@@ -39,10 +39,10 @@ function fecha () {
     let fechaDOM= ""
     fechaDOM=document.createElement("p")
     articleDOM.appendChild(fechaDOM)
-    fechaDOM.innerHTML = `${fechaInput[0]}/${fechaInput[1]}/${fechaInput[2]}`
+    fechaDOM.innerHTML = `${day}/${month}/${year}`
 }
 
-let interval = setInterval(reloj, 1000) //Cada 1 segundo se refresca????
+let interval = setInterval(reloj, 1000) //Cada 1 segundo se refresca!!!!!
 let intervalFecha = setInterval(fecha, 1000)
 
 
@@ -72,8 +72,8 @@ function comprobacion (){
     texto(12,14, "Echa un rato más pero no olvides comer")
     texto(14,16, "Espero que hayas comido")
     texto(16,18, "Buenas tardes, el último empujón")
-    texto(22,24, "Buenas noches, es hora de pensar en parar y descansar")
     texto(18,22, "Esto ya son horas extras, ... piensa en parar pronto")
+    texto(22,24, "Buenas noches, es hora de pensar en parar y descansar")
     
 }
 let intervalTexto = setInterval(comprobacion(), 1000)

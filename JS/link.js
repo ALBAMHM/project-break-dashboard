@@ -3,43 +3,71 @@ const nombreEnlaceDOM = document.getElementById("nombreEnlace");
 const urlEnlaceDOM = document.getElementById("urlEnlace");
 const buttonEnlaceDOM = document.getElementById("buttonEnlace");
 
-buttonEnlaceDOM.addEventListener("click", function() {
+function limitarTexto(texto, longitudMaxima) {
+    if (texto.length > longitudMaxima) {
+        return texto.substring(0, longitudMaxima) + "...";
+    } else {
+        return texto;
+    }
+}
+
+function eventListener (elemento, accion){
+    elemento.addEventListener(accion, function() {
     
-    let enlacesGuardados = JSON.parse(localStorage.getItem("enlaces")) || [];
+        let enlacesGuardados = JSON.parse(localStorage.getItem("enlaces")) || [];
+    
+        enlacesGuardados.push({
+            nombre: nombreEnlaceDOM.value,
+            url: urlEnlaceDOM.value
+        });
+    
+        localStorage.setItem("enlaces", JSON.stringify(enlacesGuardados));
+    
+        sectionDOM.innerHTML = ""; 
+    
+        enlacesGuardados.forEach(function(enlace) {
+             if(enlace.nombre && enlace.url){      
+            
+            let enlaceElement = document.createElement("div"); 
+    
+            let nombreEnlace = document.createElement("p");
+            nombreEnlace.textContent = enlace.nombre; 
+            enlaceElement.appendChild(nombreEnlace); 
+    
+            let urlEnlace = document.createElement("p");
+            let aElement = document.createElement("a");
+            aElement.href = enlace.url;
+            aElement.textContent =  limitarTexto(enlace.url, 20);
+            aElement.target = "_blank";
+            urlEnlace.appendChild(aElement); 
+            enlaceElement.appendChild(urlEnlace); 
+    
+            let borrarButton = document.createElement("input");
+            borrarButton.type = "button";
+            borrarButton.value = "Borrar enlace";
+            borrarButton.className = "borrarButton";
+            enlaceElement.appendChild(borrarButton);
+            borrarButton.addEventListener("click", function() {
+                
 
-    enlacesGuardados.push({
-        nombre: nombreEnlaceDOM.value,
-        url: urlEnlaceDOM.value
+        let indice = enlacesGuardados.findIndex(function(enlaceGuardado) {
+            return enlaceGuardado.nombre === enlace.nombre && enlaceGuardado.url === enlace.url;
+        });
+        
+        if (indice !== -1) {
+            enlacesGuardados.splice(indice, 1); 
+            localStorage.setItem("enlaces", JSON.stringify(enlacesGuardados));
+            enlaceElement.remove();
+        }
+            });
+           
+            sectionDOM.appendChild(enlaceElement); 
+        } 
+        });
+    
     });
+    
+}
 
-    localStorage.setItem("enlaces", JSON.stringify(enlacesGuardados));
-    //sectionDOM.innerHTML=""
-    let urlEnlace = document.createElement("p");
-    let nombreEnlace = document.createElement("p");
-    urlEnlace.innerHTML=""
-    nombreEnlace.innerHTML=""
-   
-    enlacesGuardados.forEach(function(enlacesGuardados) {
-        urlEnlace.innerHTML = `<a href="${enlacesGuardados.url}" target="_blank">${enlacesGuardados.url}</a> <input type="button" class="borrarButton" value="Borrar enlace">`;
-        sectionDOM.appendChild(urlEnlace);
-
-        nombreEnlace.innerHTML = `<p class="borrarButton"> ${enlacesGuardados.nombre}</p>`;
-        sectionDOM.appendChild(nombreEnlace);
-    });
-});
-
-
-window.addEventListener("load", function() {
-    let enlacesGuardados = JSON.parse(localStorage.getItem("enlaces")) || [];
-
-    enlacesGuardados.forEach(function(enlacesGuardados) {
-        let urlEnlace = document.createElement("p");
-        urlEnlace.innerHTML = `<a href="${enlacesGuardados.url}" target="_blank">${enlacesGuardados.url}</a> <input type="button" class="borrarButton" value="Borrar enlace">`;
-        sectionDOM.appendChild(urlEnlace);
-
-        let nombreEnlace = document.createElement("p");
-        nombreEnlace.textContent = enlacesGuardados.nombre;
-        sectionDOM.appendChild(nombreEnlace);
-    });
-});
-
+eventListener(buttonEnlaceDOM,"click")
+eventListener(window,"load")
