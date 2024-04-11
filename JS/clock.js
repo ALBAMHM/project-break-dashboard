@@ -51,7 +51,7 @@ function texto (mayorQue,menorQue,textoIndicacion){
     const date = new Date()
     const hora = date.getHours()
     
-    if (hora>mayorQue || hora<=menorQue  ){
+    if (hora>=mayorQue && hora<menorQue  ){
         let existingTexto = textoDomm.querySelector("p");
 
 
@@ -72,8 +72,9 @@ function comprobacion (){
     texto(12,14, "Echa un rato más pero no olvides comer")
     texto(14,16, "Espero que hayas comido")
     texto(16,18, "Buenas tardes, el último empujón")
-    texto(18,22, "Esto ya son horas extras, ... piensa en parar pronto")
     texto(22,24, "Buenas noches, es hora de pensar en parar y descansar")
+    texto(18,22, "Esto ya son horas extras, ... piensa en parar pronto")
+    
 }
 let intervalTexto = setInterval(comprobacion(), 1000)
 

@@ -13,7 +13,7 @@ buttonEnlaceDOM.addEventListener("click", function() {
     });
 
     localStorage.setItem("enlaces", JSON.stringify(enlacesGuardados));
-
+    //sectionDOM.innerHTML=""
     let urlEnlace = document.createElement("p");
     let nombreEnlace = document.createElement("p");
     urlEnlace.innerHTML=""
