@@ -9,5 +9,6 @@ const togetherArrays={
 }
 
 import { passwordGeneral } from "./jsBASE.js"
+
 passwordGeneral(section,togetherArrays)
 

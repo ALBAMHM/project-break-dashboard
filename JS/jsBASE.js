@@ -173,7 +173,7 @@ export const getHours = async(forecastDayULM)=> {
    
  export function passwordGeneral(sectionP,togetherArrays){
     passwordButton.addEventListener("click", () => {
-    
+        if (numberSelection.value >= 12 && numberSelection.value <= 50){
     let existingPassword = sectionP.querySelector("p");
 
 
@@ -183,7 +183,7 @@ export const getHours = async(forecastDayULM)=> {
     let createdPassword=document.createElement("p");
     sectionP.appendChild(createdPassword);
     createdPassword.innerHTML="<p><b>Contraseña Generada:</b> <p>" +"<p>"+generarContrasena(numberSelection.value)+"</p>" 
-    
+}
          
 })
 
