@@ -1,5 +1,96 @@
 *{
+   
     background-size: 100%;
     background-repeat: no-repeat;
-   
+       
+    
+}
+
+.main{
+    font-family: sans-serif;
+    color:white;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(128, 128, 128, 0.4);
+}
+.buttonEnlace {
+    background-color: #c325c9; 
+    border:none;
+    color: white;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.borrarButton{
+    background-color: #abc925; 
+    border:none;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.buttonEnlace:hover {
+    background-color: #7a0c7e; 
+}
+.nombreEnlace{
+    background-color: white;
+    color:black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 200px;
+    padding: 15px 15px;
+    border-radius: 10px;
+}
+.urlEnlace{
+    background-color: white;
+    color:black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 300px;
+    padding: 15px 15px;
+    border-radius: 10px;
+}
+
+header ul{
+    display:flex;
+    justify-content: left;
+    align-items:center;
+    list-style: none;
+    padding: 40px; 
+    margin: 0;
+}
+header ul li{
+    padding:10px;
+    font-size: 30px;
+}
+footer ul{
+    display:flex;
+    justify-content: right;
+    align-items:center;
+    list-style: none;
+    padding: 40px; 
+    margin: 0;
+}
+footer ul li{
+    padding:10px;
+    font-size: 30px;
 }

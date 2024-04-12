@@ -3,11 +3,67 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src=""></script>
+        <script src="https://kit.fontawesome.com/f9fe0979e6.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="/css/styleIndex.css">
-        <title>Título de tu página</title>
+        
+        <title>Dashboard</title>
     </head>
     <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="/html/link.html" ><i class="fa-solid fa-link"></i> </a></li>
+                    <li><a href="/html/clock.html" ><i class="fa-regular fa-clock"></i></a></li>
+                    <li><a href="/html/metereologic.html" ><i class="fa-solid fa-cloud"></i></a></li>
+                    <li><a href="/html/password.html" ><i class="fa-solid fa-lock"></i></a></li>  
+                </ul> 
+            </nav>
+        </header>
+        <h4>DASHBOARD</h4>
+        <main class="main" id="main">
+            
+            <div class="reloj" >
+                <section id="section1-clock" class="section1-clock">
+                
+                </section> 
+                <article id="article1-clock" class="article1-clock">
+                        
+                </article>  
+            </div>
+            <div class="link">
+                
+                    <h1>Añade tu enlace de interés</h1>
+                    <input type="text" id="nombreEnlace" class="nombreEnlace" placeholder="Nombre de tu enlace">
+                    <input type="text" id="urlEnlace" class="urlEnlace" placeholder="Pega aquí la URL">
+                    <input type="button" id="buttonEnlace" class="buttonEnlace" value="Añadir enlace">
+                <section id="section2-link"></section>
+                </section> 
+            </div>
+            <div class="weather">
+                <h1>Jaén/Spain </h1>
+                <section id="section3-metereologic" class="section3-metereologic">
+                    
+                    
+                </section> 
+                <article   id="article3" class="lista-horizontal">
+                        
+                </article>
+            </div>
+           
+            <div class="password">
+
+                <section id="section4-password">
+                    <h1>Crea tu contraseña segura </h1>
+                    <h2>Numero de caracteres de la Contraseña</h2>
+                    <input type="number" id="numberSelection" class="numberSelection" value="12" min="12" max="50">
+                    <input type="button" id="passwordButton" class="passwordButton" value="Generar contraseña">
+                </section> 
+            </div>
+                
+           
+        </main>
+       
+        <script type="module" src="/JS/indexDASHBOARD.js"></script>
         <script src="/JS/randomImages.js"></script>
     </body>
 </html>
