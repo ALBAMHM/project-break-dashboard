@@ -6,3 +6,6 @@ const buttonEnlaceDOM = document.getElementById("buttonEnlace");
 
 import { linkGeneral } from "./jsBASE.js";
 linkGeneral(sectionDOM,nombreEnlaceDOM,urlEnlaceDOM,buttonEnlaceDOM)
+
+import { imgRandom } from "./jsBASE.js"
+imgRandom("../")

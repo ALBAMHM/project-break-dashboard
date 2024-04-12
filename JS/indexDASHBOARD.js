@@ -39,4 +39,6 @@ const togetherArrays={
 import { passwordGeneral } from "./jsBASE.js"
 passwordGeneral(sectionPassword,togetherArrays)
 
+import { imgRandom } from "./jsBASE.js"
+imgRandom("")
 

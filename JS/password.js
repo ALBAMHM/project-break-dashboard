@@ -12,3 +12,6 @@ import { passwordGeneral } from "./jsBASE.js"
 
 passwordGeneral(section,togetherArrays)
 
+
+import { imgRandom } from "./jsBASE.js"
+imgRandom("../")

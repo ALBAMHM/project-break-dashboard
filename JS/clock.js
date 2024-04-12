@@ -38,3 +38,5 @@ function comprobacion (){
 }
 let intervalTexto = setInterval(comprobacion(), 1000)
 
+import { imgRandom } from "./jsBASE.js"
+imgRandom("../")

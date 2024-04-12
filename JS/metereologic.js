@@ -12,3 +12,7 @@ getWeather(sectionDOM);
 
 import { getHours } from "./jsBASE.js"
 getHours(forecastDayUL);
+
+
+import { imgRandom } from "./jsBASE.js"
+imgRandom("../")
